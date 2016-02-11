@@ -13,11 +13,6 @@
 </head>
 
 <body>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
-
     <div class="masthead">
     	
     </div>
@@ -39,22 +34,70 @@
             </ul>
         </div>
     </nav>
+<<<<<<< HEAD
+    <div id="map"></div>
+=======
     <div class="container">
     	<div class="center">
     		<img class="responsive-img"src="/apps/uber/mockup/Map1.PNG">
     	</div>
+>>>>>>> 3d897f31153f03447c8fe77a8e21e1c74a0c7e4c
     </div>
     <br>
 
     </div>
 
-        <script>
-        $('.button-collapse').sideNav({
-            menuWidth: 240, // Default is 240
-            edge: 'left', // Choose the horizontal origin
-            closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-        });
-        </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
+	<script>
+		function initMap() {
+		  var map = new google.maps.Map(document.getElementById('map'), {
+		    center: { lat:40.0066373,lng:-105.2638684},
+		    zoom: 18
+		  });
+		  var infoWindow = new google.maps.InfoWindow({map: map});
+
+		  // Try HTML5 geolocation.
+		  if (navigator.geolocation) {
+		    navigator.geolocation.getCurrentPosition(function(position) {
+		      var pos = {
+		        lat: position.coords.latitude,
+		        lng: position.coords.longitude
+		      };
+
+		      infoWindow.setPosition(pos);
+		      infoWindow.setContent('Location found.');
+		      map.setCenter(pos);
+		    }, function() {
+		      handleLocationError(true, infoWindow, map.getCenter());
+		    });
+		  } else {
+		    // Browser doesn't support Geolocation
+		    handleLocationError(false, infoWindow, map.getCenter());
+		  }
+		}
+
+		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+		  infoWindow.setPosition(pos);
+		  infoWindow.setContent(browserHasGeolocation ?
+		                        'Error: The Geolocation service failed.' :
+		                        'Error: Your browser doesn\'t support geolocation.');
+		}
+
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvjx2rX763ezVHsvdemCY3Fc3vBtsEygo&signed_in=true&callback=initMap"
+		        async defer>
+	</script>
+
+    <script>
+    $('.button-collapse').sideNav({
+        menuWidth: 240, // Default is 240
+        edge: 'left', // Choose the horizontal origin
+        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    });
+    </script>
 
 </body>
 

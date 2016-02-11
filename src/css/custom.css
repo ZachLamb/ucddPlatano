@@ -1,9 +1,17 @@
-.masthead{
+.masthead{/*
     height:50%;
     background-image:url("../images/platano.png");
-    background-repeat:no-repeat;
+    background-repeat:no-repeat;*/
 }
 .banana{
 	height: auto;
 	width: 50%;
 }
+
+html, body {
+	height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#map {
+    height: 100%;

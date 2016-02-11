@@ -1,6 +1,78 @@
-TODO: Make me pretty
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
 
-<ul>
-  <li><a href="admin.html">Admin</a></li>
-  <li><a href="client.html">Client</a></li>
-</ul>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css">
+
+
+    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
+
+    <script src="../lib/react.js"></script>
+    <script src="../lib/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <!-- https://github.com/PaulLeCam/react-leaflet -->
+    <script src="https://npmcdn.com/react-leaflet/dist/react-leaflet.min.js"></script>
+
+    <style>
+    .container{ 
+
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 150px; left: 0; bottom: 0; right: 0;
+  display: inline;
+}
+	#b1 {
+		padding: 20px;
+		display: inline;
+	}
+
+	#b2 {
+		padding: 20px;
+		display: inline;
+	}
+    </style>
+
+  </head>
+
+  <body>
+  <div class="container">
+  	<div id="b1"><a href="client/index.html" class="waves-effect waves-light btn-large">Where's Chip?</a></div>
+  	<div id="b2"><a href="admin/index.html" class="waves-effect waves-dark btn-large">I'm Chip</a></div>
+
+  </div>
+
+    <script>
+      // MyComponents is a global object where each property is a reference to a component class
+      MyComponents = {}
+    </script>
+
+    <!-- import each component class in components/ -->
+    <!-- The order is important. Dependencies must be loaded first -->
+    <script type="text/babel" src="components/navbar.jsx"></script>
+    <script type="text/babel" src="components/team.jsx"></script>
+    <script type="text/babel" src="components/map.jsx"></script>
+    <script type="text/babel" src="components/user.jsx"></script>
+
+    <!-- Main app container -->
+    <script type="text/babel" src="components/app.jsx"></script>
+
+    <!-- Connect the app and data -->
+    <script type="text/babel" src="data.jsx"></script>
+
+  </body>
+</html>
