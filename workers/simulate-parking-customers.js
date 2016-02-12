@@ -15,7 +15,7 @@ function simulate(){
 
   // generate a random person with a random name,
   // random location, and random duration
-  var name = random_name()
+  var name = "bob"
   var duration = 1 + 5 * Math.random()
   var lat = city_location.lat + radius * (Math.random() - 0.5) * 2
   var lon = city_location.lon + radius * (Math.random() - 0.5) * 2
