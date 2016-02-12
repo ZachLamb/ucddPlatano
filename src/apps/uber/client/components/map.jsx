@@ -8,7 +8,7 @@ class MapView extends React.Component {
       console.log(providers.latlong)
       return <Marker position = {latlong} key={i}>
         <Popup>
-          <span>{JSON.stringify(p)} {i}</span>
+          <span>{JSON.stringify(p)}</span>
         </Popup>
       </Marker>
     })
@@ -24,7 +24,7 @@ class MapView extends React.Component {
     // pointer to refer to this MapView instance
 
     return  <Map center={this.props.center}
-          zoom={14}
+          zoom={18}
           onLeafletClick={this.handleLeafletClick.bind(this)}>
         <TileLayer
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
