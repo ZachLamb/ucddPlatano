@@ -40,7 +40,6 @@
     <div id="app-container" class="container">
         <div id="navbar"></div>
         <div id="map"></div>
-        <div id="location-list"></div>
         <div id="provider-list"></div>
         <div id="provider-map"></div>
         <div id="user-list"></div>
@@ -51,18 +50,17 @@
           
     <script>
       // MyComponents is a global object where each property is a reference to a component class
-      MyComponents = {}
-      $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
-  });
+  //     MyComponents = {}
+  //     $(document).ready(function(){
+  //   // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  //   $('.modal-trigger').leanModal();
+  // });
     </script>
 
     <!-- import each component class in components/ -->
     <!-- The order is important. Dependencies must be loaded first -->
     <script type="text/babel" src="components/navbar.jsx"></script>
-    <script type="text/babel" src="components/map.jsx"></script>
-    <script type="text/babel" src="components/location_list.jsx"></script>
+    <script type="text/babel" src="../client/components/map.jsx"></script>
     <script type="text/babel" src="components/user-list.jsx"></script>
     <script type="text/babel" src="components/user-map.jsx"></script>
     <script type="text/babel" src="components/provider-list.jsx"></script>

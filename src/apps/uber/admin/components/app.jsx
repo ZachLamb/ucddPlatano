@@ -1,5 +1,6 @@
 class App extends React.Component {
   render(){
+    var title = "Chip's Grazin"
     return <div>
       <MyComponents.NavBar actions={this.props.actions}/>
       <div className="card">
@@ -9,7 +10,6 @@ class App extends React.Component {
             user={this.props.data.user}
             setUserLocationAction={this.props.actions.setUserLocation}/>
       </div>
-      <MyComponents.LocationList actions={this.props.actions}/>
       <MyComponents.UserMap users={this.props.data.users}/>
       <MyComponents.UserList users={this.props.data.users}/>
       <MyComponents.ProviderMap users={this.props.data.providers}/>
