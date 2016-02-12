@@ -23,12 +23,11 @@ function render(){
 
 var firebaseRef = new Firebase('https://platano.firebaseio.com')
 
-firebaseRef.child('providers').on('value', function(chip) {
-  
-      data.providers = _.values(chip.val())
+firebaseRef.child('providers').on('value', function(snapshot){
+      data.providers = _.values(snapshot.val())
       console.log(data.providers)
-      render()
-})
+      render() 
+});
 // Real-time Data (load constantly on changes)
 
 
