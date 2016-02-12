@@ -1,6 +1,6 @@
 // a single 'data' object that holds the data of your entire app, with initial values
 var data = {
-  center: [40.006400, -105.263736], // Boulder
+  center: [37.78, -122.41], // San Francisco
   providers: [],
   user: null
 }
@@ -19,21 +19,26 @@ function render(){
     $('#app-container').get(0)
   )
 }
+
+//
 // DATA
+//
 
-var firebaseRef = new Firebase('https://platano.firebaseio.com')
+var firebaseRef = new Firebase('https://platano.firebaseio.com/uber')
 
-firebaseRef.on('value', function(chip) {
-  chip.forEach(function(providers){
-    
-   // data.providers.push(building)
-      data.providers = _.values(chip.val())
-      render()
-    // console.log(building)
-    })  
-});
 // Real-time Data (load constantly on changes)
+firebaseRef.child('providers')
+  .on('value', function(snapshot){
 
+    data.providers = _.values(snapshot.val())
+
+    render()
+
+  })
+
+//
+// ACTIONS
+//
 
 // Actions
 actions.setUserLocation = function(latlng){

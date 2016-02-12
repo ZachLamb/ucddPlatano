@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Admin</title>
 
-    <!--Import Google Icon Font-->
+      <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
@@ -36,19 +36,34 @@
   </head>
   <body>
     <div id="app-container" class="container">
-    </div>
+        <div id="navbar"></div>
+        <div id="map"></div>
+        <div id="provider-list"></div>
+        <div id="provider-map"></div>
+        <div id="user-list"></div>
+        <div id="user-map"></div>
+        <div> </div>
 
+    </div>
+          
     <script>
       // MyComponents is a global object where each property is a reference to a component class
       MyComponents = {}
+  //     $(document).ready(function(){
+  //   // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  //   $('.modal-trigger').leanModal();
+  // });
     </script>
 
     <!-- import each component class in components/ -->
     <!-- The order is important. Dependencies must be loaded first -->
+    <script type="text/babel" src="components/navbar.jsx"></script>
+    <script type="text/babel" src="components/map.jsx"></script>
     <script type="text/babel" src="components/user-list.jsx"></script>
     <script type="text/babel" src="components/user-map.jsx"></script>
     <script type="text/babel" src="components/provider-list.jsx"></script>
     <script type="text/babel" src="components/provider-map.jsx"></script>
+
 
     <!-- Main app container -->
     <script type="text/babel" src="components/app.jsx"></script>

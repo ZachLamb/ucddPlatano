@@ -1,11 +1,8 @@
-var _ = require('lodash')
-var random_name = require('node-random-name');
-var Firebase = require('firebase');
 
-// San Francisco
+// Boulder
 var city_location = {
-  lat: 37.78,
-  lon: -122.41
+  lat: 40.0067,
+  lon: -105.2672
 }
 
 var radius = 0.03
@@ -15,12 +12,10 @@ function simulate(){
 
   // generate a random person with a random name,
   // random location, and random duration
-  var name = random_name()
   var duration = 1 + 5 * Math.random()
   var lat = city_location.lat + radius * (Math.random() - 0.5) * 2
   var lon = city_location.lon + radius * (Math.random() - 0.5) * 2
   var person = {
-    name: name,
     duration: duration,
     lat: lat,
     lon: lon

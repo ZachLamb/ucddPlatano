@@ -12,6 +12,7 @@
     "consolidate": "^0.13.1",
     "debug": "^2.2.0",
     "firebase": "^2.4.0",
+    "google-map-react": "^0.10.5",
     "handlebars": "^4.0.3",
     "lodash": "^3.10.1",
     "markdown-it": "^5.1.0",
