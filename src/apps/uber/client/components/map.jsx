@@ -5,7 +5,7 @@ class MapView extends React.Component {
     const providers = this.props.providers
     const providerElements = _.map(providers, function(p,i){
       var latlong = [p.lat , p.long]
-      console.log(providers.latlong)
+      console.log(latlong)
       return <Marker position = {latlong} key={i}>
         <Popup>
           <span>{JSON.stringify(p)}</span>
