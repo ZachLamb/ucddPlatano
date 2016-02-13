@@ -33,19 +33,40 @@
         width: 80%;
         margin: 0 auto;
       }
+      #mordor{
+        z-index: 1000;
+      }
     </style>
 
   </head>
   <body>
     <div id="app-container" class="container">
         <div id="navbar"></div>
+
         <div id="map"></div>
+
         <div id="provider-list"></div>
         <div id="provider-map"></div>
         <div id="user-list"></div>
         <div id="user-map"></div>
-        <div> </div>
+        
 
+    </div>
+    <div id= "mordor" class = "container">
+        <!-- Modal Trigger -->
+        <div class="center">
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+            <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
     </div>
           
     <script>
@@ -71,3 +92,9 @@
 
   </body>
 </html>
+
+<script> $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
+</script>
