@@ -12,12 +12,13 @@ function simulate(){
 
   // generate a random person with a random name,
   // random location, and random duration
-  var name = "bob"
+  var name = ['Chip1', 'Chip2', 'Chip3', 'Chip4', 'Chip5', 'Chip6', 'Chip7', 'Chip8', 'Chip9', 'Chip10']
+  var rand = name[Math.floor(Math.random() * name.length)]
   var duration = 1 + 5 * Math.random()
   var lat = city_location.lat + radius * (Math.random() - 0.5) * 2
   var lon = city_location.lon + radius * (Math.random() - 0.5) * 2
   var person = {
-    name: name,
+    name: rand,
     duration: duration,
     lat: lat,
     lon: lon
@@ -34,14 +35,14 @@ function simulate(){
 }
 
 function enter(person){
-  //console.log('enter', person)
+  console.log('enter', person)
   // put this person in the Firebase
   var ref = new Firebase('https://platano.firebaseio.com/')
-  ref.child(person.name).set(person)
+  ref.child('person'.name).set(person)
 }
 
 function leave(person){
-  //console.log('leave', person)
+  console.log('leave', person)
   // remove this person from the Firebase
   var ref = new Firebase('https://platano.firebaseio.com/')
   ref.child(person.name).remove()
@@ -51,8 +52,8 @@ function leave(person){
 
 function clear(){
   // remove all people from the Firebase
-  var ref = new Firebase('https://platano.firebaseio.com/person')
-  ref.remove()
+  var ref = new Firebase('https://platano.firebaseio.com/')
+  
 }
 
 

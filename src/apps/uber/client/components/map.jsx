@@ -11,6 +11,7 @@ class MapView extends React.Component {
           <span>{JSON.stringify(p)}</span>
         </Popup>
       </Marker>
+
     })
 
     let userElement
