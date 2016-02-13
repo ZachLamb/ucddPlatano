@@ -40,7 +40,7 @@ function enter(person){
   console.log('enter', person)
   // put this person in the Firebase
   var ref = new Firebase('https://platano.firebaseio.com/')
-  ref.child('person').set(person)
+  ref.child(person.name).set(person)
 }
 
 function leave(person){

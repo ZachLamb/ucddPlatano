@@ -1,4 +1,6 @@
 
+var Firebase = require('firebase');
+
 // Boulder
 var city_location = {
   lat: 40.0067,
@@ -34,12 +36,20 @@ function simulate(){
 
 }
 
+
+
 function enter(person){
   console.log('enter', person)
-  // put this person in the Firebase
   var ref = new Firebase('https://platano.firebaseio.com/')
-  ref.child('person'.name).set(person)
+  var userRef = ref.child(person.name);
+
+  userRef.set({
+    lat: person.lat,
+    lon: person.lon,
+    name: person.name
+  });
 }
+
 
 function leave(person){
   console.log('leave', person)
