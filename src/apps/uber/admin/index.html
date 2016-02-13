@@ -55,7 +55,7 @@
     <div id= "mordor" class = "container">
         <!-- Modal Trigger -->
         <div class="center">
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Send Location</a>
 
             <!-- Modal Structure -->
             <div id="modal1" class="modal">
@@ -64,7 +64,7 @@
             <!-- Switch -->
               <div class="switch">
                 <label>
-                  Not Active
+                  Norlin
                   <input type="checkbox">
                   <span class="lever"></span>
                   Active
@@ -73,8 +73,8 @@
             <!-- Switch -->
               <div class="switch">
                 <label>
-                  Not Active
-                  <input type="checkbox">
+                  C4C
+                  <input id = "C4C" type="checkbox">
                   <span class="lever"></span>
                   Active
                 </label>
@@ -82,16 +82,16 @@
               <!-- Switch -->
               <div class="switch">
                 <label>
-                  Not Active
-                  <input type="checkbox">
+                  Coorseventcenter
+                  <input id = "coors" type="checkbox">
                   <span class="lever"></span>
                   Active
                 </label>
               </div><!-- Switch -->
               <div class="switch">
                 <label>
-                  Not Active
-                  <input type="checkbox">
+                  Engineering Center
+                  <input id = "Engr" type="checkbox">
                   <span class="lever"></span>
                   Active
                 </label>
@@ -99,8 +99,8 @@
               <!-- Switch -->
               <div class="switch">
                 <label>
-                  Not Active
-                  <input type="checkbox">
+                  Business School
+                  <input id = "bssch" type="checkbox">
                   <span class="lever"></span>
                   Active
                 </label>
@@ -108,7 +108,7 @@
               <!-- Switch -->
               <div class="switch">
                 <label>
-                  Not Active
+                  Kittredge
                   <input type="checkbox">
                   <span class="lever"></span>
                   Active
@@ -116,7 +116,15 @@
               </div><!-- Switch -->
               <div class="switch">
                 <label>
-                  Not Active
+                  Folsom
+                  <input id = "fol" type="checkbox">
+                  <span class="lever"></span>
+                  Active
+                </label>
+              </div><!-- Switch -->
+              <div class="switch">
+                <label>
+                  Rec Center
                   <input type="checkbox">
                   <span class="lever"></span>
                   Active
@@ -124,31 +132,23 @@
               </div><!-- Switch -->
               <div class="switch">
                 <label>
-                  Not Active
-                  <input type="checkbox">
+                  UMC
+                  <input id = "UMC" type="checkbox">
                   <span class="lever"></span>
                   Active
                 </label>
               </div><!-- Switch -->
               <div class="switch">
                 <label>
-                  Not Active
-                  <input type="checkbox">
-                  <span class="lever"></span>
-                  Active
-                </label>
-              </div><!-- Switch -->
-              <div class="switch">
-                <label>
-                  Not Active
-                  <input type="checkbox">
+                  Wille Ville
+                  <input id = "WV" type="checkbox">
                   <span class="lever"></span>
                   Active
                 </label>
               </div>
         </div>
-        <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        <div class="modal-footer" >
+        <a href="#!" id = "SndLctn" class=" modal-action modal-close waves-effect waves-green btn-flat">Send</a>
         </div>
     </div>
     </div>
@@ -181,5 +181,81 @@
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();
   });
-    document.getElementById('mySwitch').checked
+  //  document.getElementById('mySwitch').checked
+
+$( "#SndLctn" ).click(function() {
+if ($('#C4C').is(':checked')){
+  var ref = new Firebase('https://platano.firebaseio.com');
+  var userRef = ref.child('providers/C4C');
+
+
+
+  var ref2 = new Firebase('https://platano.firebaseio.com/ChipPosition');
+  userRef.on('value', function(snapshot){
+          var items = snapshot.val()
+
+  var ref3 = ref2.child('C4C');
+
+ref3.set({
+    lat: items.lat,
+    lon: items.long,
+    name: "C4C"
+  });
+	
+        })
+
+
+	
+} 
+if ($('#coors').is(':checked')){
+  var ref = new Firebase('https://platano.firebaseio.com');
+  var userRef = ref.child('providers/Coors');
+
+
+
+  var ref2 = new Firebase('https://platano.firebaseio.com/ChipPosition');
+  userRef.on('value', function(snapshot){
+          var items = snapshot.val()
+
+  var ref3 = ref2.child('Coors');
+
+ref3.set({
+    lat: items.lat,
+    lon: items.long,
+    name: "Coors"
+  });
+	
+        })
+
+
+	
+} 	  
+
+if ($('#Engr').is(':checked')){
+  var ref = new Firebase('https://platano.firebaseio.com');
+  var userRef = ref.child('providers/EngineeringCenter');
+
+
+
+  var ref2 = new Firebase('https://platano.firebaseio.com/ChipPosition');
+  userRef.on('value', function(snapshot){
+          var items = snapshot.val()
+
+  var ref3 = ref2.child('EngineeringCenter');
+
+ref3.set({
+    lat: items.lat,
+    lon: items.long,
+    name: "EngineeringCenter"
+  });
+	
+        })
+
+
+	
+} 	
+
+});
+
+
 </script>
