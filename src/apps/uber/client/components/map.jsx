@@ -2,6 +2,7 @@ const {Map, Marker, CircleMarker, Popup, TileLayer, MapLayer}  = window.ReactLea
 
 class MapView extends React.Component {
   render(){
+    const chips = this.props.person
     const providers = this.props.providers
     const providerElements = _.map(providers, function(p,i){
       var latlong = [p.lat , p.long]
@@ -13,6 +14,7 @@ class MapView extends React.Component {
       </Marker>
 
     })
+
 
     let userElement
     if (this.props.user){

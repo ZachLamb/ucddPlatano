@@ -48,6 +48,7 @@ function enter(person){
     lon: person.lon,
     name: person.name
   });
+
 }
 
 
