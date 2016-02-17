@@ -5,15 +5,25 @@ class MapView extends React.Component {
     const users = this.props.users
     const providers = this.props.providers
     const providerElements = _.map(providers, function(p,i){
+     
+      var chiphead = L.icon({
+      iconUrl:  "../chiphead.png",
+      iconSize: [40, 40],
+      shadowSize: [10, 10]
+      })
       var latlong = [p.lat , p.long]
-      //console.log(latlong)
-      return <Marker position = {latlong} key={i}>
+      if (p.active == true){
+      return <Marker position = {latlong} key={i} icon ={chiphead}>
         <Popup>
-          <span>{JSON.stringify(p.name)}</span>
+          <span><h5> Chip is here! At the {p.name}</h5></span>
         </Popup>
       </Marker>
-
+      }
+      else {
+        return null
+         }
     })
+  
 
     const userElements = _.map(users, function(u,i){
       var pos = u.pos;
@@ -32,6 +42,12 @@ class MapView extends React.Component {
       </Marker>
     })
 
+    let userElement
+    if (this.props.user){
+      userElement = <CircleMarker center={this.props.user.pos}/>
+    } else {
+      userElement = ''
+    }
 
 
     // Note: .bind(this) is important for the handler function's 'this'
