@@ -8,7 +8,7 @@ class MapView extends React.Component {
      
       var chiphead = L.icon({
       iconUrl:  "../chiphead.png",
-      iconSize: [40, 40],
+      iconSize: [50, 50],
       shadowSize: [10, 10]
       })
       var latlong = [p.lat , p.long]
