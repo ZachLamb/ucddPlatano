@@ -6,20 +6,27 @@ class MapView extends React.Component {
     const providerElements = _.map(providers, function(p,i){
       var latlong = [p.lat , p.long]
       console.log(latlong)
+      if (p.active == true){
       return <Marker position = {latlong} key={i}>
         <Popup>
-          <span>{JSON.stringify(p)}</span>
+          <span><h1>{providers.key}</h1> {JSON.stringify(p)} </span>
         </Popup>
       </Marker>
-
+      }
+      else {
+        return null
+         }
     })
+  
+
 
     let userElement
     if (this.props.user){
-      userElement = <CircleMarker center={this.props.latlong}/>
+      userElement = <CircleMarker center={this.props.user.pos}/>
     } else {
       userElement = ''
     }
+
 
     // Note: .bind(this) is important for the handler function's 'this'
     // pointer to refer to this MapView instance
@@ -40,6 +47,7 @@ class MapView extends React.Component {
   handleLeafletClick(event){
     console.log('leaflet click event', event)
     this.props.setUserLocationAction(event.latlng)
+
   }
 }
 
