@@ -2,6 +2,7 @@
 var data = {
   center: [37.78, -122.41], // San Francisco
   providers: [],
+  users: [],
   user: null
 }
 
@@ -35,6 +36,15 @@ firebaseRef.child('providers')
     render()
 
   })
+
+var firebaseRef2 = new Firebase('https://platano.firebaseio.com')
+
+firebaseRef2.child('users').on('value', function(snapshot){
+      data.users = _.values(snapshot.val())
+      console.log(data.users)
+      render() 
+});
+
 
 //
 // ACTIONS
