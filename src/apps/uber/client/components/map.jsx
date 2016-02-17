@@ -9,7 +9,7 @@ class MapView extends React.Component {
       if (p.active == true){
       return <Marker position = {latlong} key={i}>
         <Popup>
-          <span><h1>{providers.key}</h1> {JSON.stringify(p)} </span>
+          <span><h5> Chip is here! At the {p.name}</h5></span>
         </Popup>
       </Marker>
       }
