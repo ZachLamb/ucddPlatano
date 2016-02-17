@@ -4,10 +4,16 @@ class MapView extends React.Component {
   render(){
     const providers = this.props.providers
     const providerElements = _.map(providers, function(p,i){
+     
+      var chiphead = L.icon({
+      iconUrl:  "../chiphead.png",
+      iconSize: [40, 40],
+      shadowSize: [10, 10]
+      })
       var latlong = [p.lat , p.long]
       console.log(latlong)
       if (p.active == true){
-      return <Marker position = {latlong} key={i}>
+      return <Marker position = {latlong} key={i} icon ={chiphead}>
         <Popup>
           <span><h5> Chip is here! At the {p.name}</h5></span>
         </Popup>
