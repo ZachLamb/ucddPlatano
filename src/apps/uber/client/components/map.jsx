@@ -2,14 +2,20 @@ const {Map, Marker, CircleMarker, Popup, TileLayer, MapLayer}  = window.ReactLea
 
 class MapView extends React.Component {
   render(){
+    const users = this.props.users
     const providers = this.props.providers
     const providerElements = _.map(providers, function(p,i){
+     
+      var chiphead = L.icon({
+      iconUrl:  "../chiphead.png",
+      iconSize: [50, 50],
+      shadowSize: [10, 10]
+      })
       var latlong = [p.lat , p.long]
-      console.log(latlong)
       if (p.active == true){
-      return <Marker position = {latlong} key={i}>
+      return <Marker position = {latlong} key={i} icon ={chiphead}>
         <Popup>
-          <span><h1>{providers.key}</h1> {JSON.stringify(p)} </span>
+          <span><h5> Chip is here! At the {p.name}</h5></span>
         </Popup>
       </Marker>
       }
@@ -19,6 +25,22 @@ class MapView extends React.Component {
     })
   
 
+    const userElements = _.map(users, function(u,i){
+      var pos = u.pos;
+
+      var u_icon = L.icon({
+      iconUrl: '../user.png',
+      iconSize: [40, 40],
+      iconAnchor: [0, 40],
+      popupAnchor: [20, -30]
+      })
+
+      return <Marker position={pos} key={i} icon={u_icon}>
+        <Popup>
+          <span><b> {u.displayName}</b></span>
+        </Popup>
+      </Marker>
+    })
 
     let userElement
     if (this.props.user){
@@ -39,7 +61,7 @@ class MapView extends React.Component {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         {providerElements}
-        {userElement}
+        {userElements}
       </Map>
   }
 
