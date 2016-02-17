@@ -29,7 +29,7 @@ class MapView extends React.Component {
       var pos = u.pos;
 
       var u_icon = L.icon({
-      iconUrl: 'user.png',
+      iconUrl: '../user.png',
       iconSize: [40, 40],
       iconAnchor: [0, 40],
       popupAnchor: [20, -30]
