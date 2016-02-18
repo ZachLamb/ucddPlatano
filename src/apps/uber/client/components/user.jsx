@@ -13,13 +13,13 @@ class User extends React.Component {
             <li><b>Github username:</b> {JSON.stringify(this.props.user.username)}</li>
             </ul>
           
-          <a href="#" className="teal waves-effect waves-light btn " onClick={this.props.logoutAction}>Logout</a>
+          <a href="#" className="black yellow-text waves-effect waves-light btn " onClick={this.props.logoutAction}>Logout</a>
       </div>
     } else {
       // user is not set
       return <div className="center-align">
         <h5>You are not logged in yet.</h5>
-        <a href="#"  onClick={this.props.loginAction} className="teal waves-effect waves-light btn ">Login via Github</a>
+        <a href="#"  onClick={this.props.loginAction} className="black yellow-text waves-effect waves-light btn ">Login via Github</a>
       </div>
     }
   }
