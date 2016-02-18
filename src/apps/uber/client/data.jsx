@@ -2,6 +2,7 @@
 var data = {
   center: [40.006400, -105.263736], // Boulder
   providers: [],
+  users: [],
   user: null
 }
 
@@ -23,15 +24,22 @@ function render(){
 
 var firebaseRef = new Firebase('https://platano.firebaseio.com')
 
-firebaseRef.on('value', function(chip) {
-  chip.forEach(function(providers){
-    
-   // data.providers.push(building)
-      data.providers = _.values(chip.val())
-      render()
-    // console.log(building)
-    })  
+firebaseRef.child('providers').on('value', function(snapshot){
+      data.providers = _.values(snapshot.val())
+      console.log(data.providers)
+      render() 
 });
+
+var firebaseRef2 = new Firebase('https://platano.firebaseio.com')
+
+firebaseRef2.child('users').on('value', function(snapshot){
+      data.users = _.values(snapshot.val())
+      console.log(data.users)
+      render() 
+});
+
+
+
 // Real-time Data (load constantly on changes)
 
 

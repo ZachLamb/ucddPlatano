@@ -2,10 +2,10 @@ var _ = require('lodash')
 var random_name = require('node-random-name');
 var Firebase = require('firebase');
 
-// San Francisco
+// Boulder
 var city_location = {
-  lat: 37.78,
-  lon: -122.41
+  lat: 40.0067,
+  lon: -105.2672
 }
 
 var radius = 0.03
@@ -38,23 +38,24 @@ function simulate(){
 
 function enter(person){
   console.log('enter', person)
-  // TODO: put this person in the Firebase
-  // var ref = new Firebase('your-firebase-url')
-  // ...
+  // put this person in the Firebase
+  var ref = new Firebase('https://platano.firebaseio.com/')
+  ref.child(person.name).set(person)
 }
 
 function leave(person){
   console.log('leave', person)
-  // TODO: remove this person from the Firebase
-  // var ref = new Firebase('your-firebase-url')
-  // ...
+  // remove this person from the Firebase
+  var ref = new Firebase('https://platano.firebaseio.com/')
+  ref.child(person.name).remove()
+
 }
 
 
 function clear(){
-  // TODO: remove all people from the Firebase
-  // var ref = new Firebase('your-firebase-url')
-  // ...
+  // remove all people from the Firebase
+  var ref = new Firebase('https://platano.firebaseio.com/')
+  
 }
 
 

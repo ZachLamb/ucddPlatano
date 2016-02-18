@@ -18,13 +18,35 @@ create, play, build, fix, help, control ... etc
 ## Ideation
 
 * What is the name of your app?
+
+Bar Crawler
+
 * What collaborative activity can people do together using your app?
+
+People can plan going out
 * What is the ideal number of concurrent users (must be at least 10 but no more than 40)?
+
+15-20
+
 * What skills do people need in order to do this activity?
+
+Just knowing how to use a map.
+
 * Is this activity for fun or for something practical?
+
+Fun. It could also be practical in the sense that you can track and make sure that your friends/loved ones are safe
+
 * How can a person see what everyone else is doing?
+
+Location of themselves on the app and the chat of course.
+
 * How can a person see the most recent result of everyone's collaborative effort?
+
+next to the chat pane, there is the "schedule" of the night.
+
 * What can an admin see (i.e., God's mode)?
+
+Admin cannot see chat as this is a privacy issue ,but admin can see what bars/clubs/places people are going to. Admin cannot see customers either.
 
 ## Mockup
 

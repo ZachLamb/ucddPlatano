@@ -1,5 +1,6 @@
 class App extends React.Component {
   render(){
+    var title = "Chip's Grazin"
     return <div>
       <MyComponents.NavBar actions={this.props.actions}/>
       <div className="card">
@@ -18,3 +19,4 @@ class App extends React.Component {
 }
 
 MyComponents.App = App
+
