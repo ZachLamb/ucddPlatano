@@ -23,11 +23,26 @@ MyComponents.UserList = React.createClass({
 
     return (
       <div>
-      	<h5>Online Users</h5>
-        	{usersActive}
-
-      	<h5>Offline Users</h5>
-        	{usersNotActive}
+      	<div className="container">
+          <div className="row">
+            <div className="col s12 m6 6">
+              <div className="card yellow darken-1">
+                <div className="card-content black-text">
+                  <span className="card-title">Active Users</span>
+                    {usersActive}
+                </div>
+              </div>
+            </div>
+            <div className="col s12 m6 6">
+              <div className="card black">
+                <div className="card-content yellow-text">
+                  <span className="card-title">Inactive Users</span>
+                    {usersNotActive}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
