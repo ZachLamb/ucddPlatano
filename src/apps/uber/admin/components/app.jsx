@@ -10,9 +10,7 @@ class App extends React.Component {
             user={this.props.data.user}
             setUserLocationAction={this.props.actions.setUserLocation}/>
       </div>
-      <MyComponents.UserMap users={this.props.data.users}/>
       <MyComponents.UserList users={this.props.data.users}/>
-      <MyComponents.ProviderMap users={this.props.data.providers}/>
       <MyComponents.ProviderList providers={this.props.data.providers}/>
     </div>
   }
